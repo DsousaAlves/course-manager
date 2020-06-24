@@ -35,5 +35,15 @@ export class CourseListComponent implements OnInit {
     public get filter(): string {
         return this.filterBy;
     }
+
+    public delete(id: number): void {
+        this.courseService.delete(id).subscribe({
+            next: () => {
+                console.log('Deleted with success');
+                this.retrieveAll();
+            },
+            error: err => console.log('error', err)
+        });
+    }
 }
 
