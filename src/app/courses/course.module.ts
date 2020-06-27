@@ -19,6 +19,9 @@ import { AppPipeModule } from '../shared/pipe/app-pipe.module';
         CommonModule,
         RouterModule.forChild([
             {
+                path: '', redirectTo: 'courses', pathMatch: 'full'
+            },
+            {
                 path: 'courses', component: CourseListComponent
             },
             {
